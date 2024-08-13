@@ -1,206 +1,193 @@
-/* 
-Color pallete. This section defines variables for the color pallete,
-so that we can refer to particular colors by name instead of hexadecimal values.
-This is applied to the 'root' psuedo-element, which just means that these color
-variables are available to be used anywhere in our html document
-*/
 :root {
     --white-font: #FFFFFF;
-    --black-font: #000000;
-    /* add in other color variables for color pallete */
+    --black-font: #FFFFFF;
     --color1: #0B1D51;
-    --color2: #797596;
+    --color2: #910000;
     --color3: #A1869E;
-    --color4: #BBADA0;
+    --color4: #910000;
     --color5: #D1C6AD;
 }
 
-/* Defines the main container size, we are limiting to 72em max and centring in the viewport */
+body {
+    background-color: #000000; 
+}
+
 .main-container {
     max-width: 72em;
     margin: 0 auto;
     font-family: Inter;
-    /* TODO: set the main font color */
+    color: var(--black-font);
 }
 
-/* Here we define the aspects of style of our elements other than their grid layout */
 .banner {
-    /* TODO: banner styling */
     padding: 1em;
     background-color: var(--color2);
-    color: var(--white-font)
+    color: var(--white-font);
 }
 
 .banner-title {
-    /* TODO: banner main title font styling */
-   
     font-size: 3em;
 }
 
 .banner-subtitle {
-    /* TODO: banner subtitle font styling */
     font-size: 2.25em;
-    
-}
-.team-member-card {
-    /* TODO: style the card as a column based flexbox with rounded corners */
 }
 
-/* this is the equivalent of setting the image rectangle to "Fill Container" in Figma */ 
-.team-member-card-image {
+.essay-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Visual-Essay-Image {
     width: 100%;
 }
 
-.team-member-card-blurb {
-    /* TODO: style the blurb with padding */
+.Visual-EssayText {
+    padding: 1em;
+    background-color: var(--color4);
+    color: var(--black-font);
 }
 
 .our-clients-title {
-    /* TODO: style the 'Our Clients' text font */
     background-color: var(--color5);
     text-align: center;
     font-size: 48px;
 }
 
-/* this is the equivalent of setting the image rectangle to "Fill Container" in Figma */ 
-.client-icon {
-    width: 100%;
-}
-
-/* now we create names for the grid areas for specific elements */
 #banner {
-    /* TODO: give the grid-area a name */
     grid-area: ban;
 }
 
-#teamMemberCard1 {
-    /* TODO: give the grid-area a name */
-    grid-area: tm1;
+#essay-card1 {
+    grid-area: ec1;
 }
 
-#teamMemberCard2 {
-    /* TODO: give the grid-area a name */
-    grid-area: tm2;
+#essay-card2 {
+    grid-area: ec2;
 }
 
-#teamMemberCard3 {
-    /* TODO: give the grid-area a name */
-    grid-area: tm3;
+#essay-card3 {
+    grid-area: ec3;
 }
 
-#ourClientsTitle {
-    /* TODO: give the grid-area a name */
-    grid-area: oct;
+#essay-card4 {
+    grid-area: ec4;
 }
 
-#clientIcon1 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci1
+#essay-card5 {
+    grid-area: ec5;
 }
 
-#clientIcon2 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci2;
+#essay-card6 {
+    grid-area: ec6;
 }
 
-#clientIcon3 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci3;
-}
-#clientIcon4 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci4;
+#essay-card7 {
+    grid-area: ec7;
 }
 
-#clientIcon5 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci5;
+#essay-card9 {
+    grid-area: ec9;
 }
 
-#clientIcon6 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci6;
+#essay-card10 {
+    grid-area: ec10;
 }
 
-#clientIcon7 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci7;
+#essay-card11 {
+    grid-area: ec11;
 }
 
-#clientIcon8 {
-    /* TODO: give the grid-area a name */
-    grid-area: ci8;
+#essay-card12 {
+    grid-area: ec12;
 }
 
-/* Use a flexible layout grid */
+#essay-card13 {
+    grid-area: ec13;
+}
+
+#references {
+    grid-area: ref;
+}
+
 .main-container {
     display: grid;
-    column-gap: 1em;
+    column-gap: 4em;
 }
-  
-/* 
-Responsive Layout breakpoints. We start 'mobile-first' i.e. we define how the layout should look
-for the smallest screen sizes. In this case we want a single column that spans the main container.
-Because this CSS definition comes first, it will apply by default. Then we override it below with 
-media queries for progressively bigger screen widths
-*/
+
 .main-container {
     grid-template:
           "ban ban ban ban ban ban ban ban ban ban ban ban" minmax(8em, auto)
           " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-          "tm1 tm1 tm1 tm1 tm1 tm1 tm1 tm1 tm1 tm1 tm1 tm1" minmax(32em, auto)
+          "ec1 ec1 ec1 ec1 ec1 ec1 ec1 ec1 ec1 ec1 ec1 ec1" minmax(32em, auto)
           " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
-          "tm2 tm2 tm2 tm2 tm2 tm2 tm2 tm2 tm2 tm2 tm2 tm2" minmax(32em, auto)
+          "ec2 ec2 ec2 ec2 ec2 ec2 ec2 ec2 ec2 ec2 ec2 ec2" minmax(32em, auto)
           " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
-          "tm3 tm3 tm3 tm3 tm3 tm3 tm3 tm3 tm3 tm3 tm3 tm3" minmax(32em, auto)
+          "ec3 ec3 ec3 ec3 ec3 ec3 ec3 ec3 ec3 ec3 ec3 ec3" minmax(32em, auto)
           " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
-          "oct oct oct oct oct oct oct oct oct oct oct oct" minmax(2em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-          "ci1 ci1 ci1 ci1 ci1 ci1 ci2 ci2 ci2 ci2 ci2 ci2" minmax(8em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-          "ci3 ci3 ci3 ci3 ci3 ci3 ci4 ci4 ci4 ci4 ci4 ci4" minmax(8em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-          "ci5 ci5 ci5 ci5 ci5 ci5 ci6 ci6 ci6 ci6 ci6 ci6" minmax(8em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-          "ci7 ci7 ci7 ci7 ci7 ci7 ci8 ci8 ci8 ci8 ci8 ci8" minmax(8em, auto)
-    /* TODO: setup the grid-template for mobile phone layout */
-    
+          "ec4 ec4 ec4 ec4 ec4 ec4 ec4 ec4 ec4 ec4 ec4 ec4" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec5 ec5 ec5 ec5 ec5 ec5 ec5 ec5 ec5 ec5 ec5 ec5" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec6 ec6 ec6 ec6 ec6 ec6 ec6 ec6 ec6 ec6 ec6 ec6" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec7 ec7 ec7 ec7 ec7 ec7 ec7 ec7 ec7 ec7 ec7 ec7" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec9 ec9 ec9 ec9 ec9 ec9 ec9 ec9 ec9 ec9 ec9 ec9" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec10 ec10 ec10 ec10 ec10 ec10 ec10 ec10 ec10 ec10 ec10 ec10" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec11 ec11 ec11 ec11 ec11 ec11 ec11 ec11 ec11 ec11 ec11 ec11" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec12 ec12 ec12 ec12 ec12 ec12 ec12 ec12 ec12 ec12 ec12 ec12" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ec13 ec13 ec13 ec13 ec13 ec13 ec13 ec13 ec13 ec13 ec13 ec13" minmax(32em, auto)
+          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
+          "ref ref ref ref ref ref ref ref ref ref ref ref" minmax(8em, auto);
+}
+/* Media queries for responsiveness */
+.main-container {
+    max-width: 100%;
+    width: calc(100% - 2em); /* Adjust width to account for padding */
+    padding: 0 1em; /* Add padding to ensure content doesn't touch the edges */
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-@media (min-width: 50em) {
-    .main-container {
-        grid-template:
-        "ban ban ban ban ban ban ban ban ban ban ban ban" minmax(8em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-        "tm1 tm1 tm1 tm1 tm1 tm1 tm2 tm2 tm2 tm2 tm2 tm2" minmax(32em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
-        " . . . tm3 tm3 tm3 tm3 tm3 tm3 . . . " minmax(32em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
-        "oct oct oct oct oct oct oct oct oct oct oct oct" minmax(2em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-        "ci1 ci1 ci1 ci1 ci1 ci1 ci2 ci2 ci2 ci2 ci2 ci2" minmax(8em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-        "ci3 ci3 ci3 ci3 ci3 ci3 ci4 ci4 ci4 ci4 ci4 ci4" minmax(8em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-        "ci5 ci5 ci5 ci5 ci5 ci5 ci6 ci6 ci6 ci6 ci6 ci6" minmax(8em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-        "ci7 ci7 ci7 ci7 ci7 ci7 ci8 ci8 ci8 ci8 ci8 ci8" minmax(8em, auto)
-            /* TODO: setup the grid-template for tablet layout */
 
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        column-gap: 2em;
+    }
+
+    .banner-title {
+        font-size: 2em;
+    }
+
+    .banner-subtitle {
+        font-size: 1.5em;
+    }
+
+    .our-clients-title {
+        font-size: 36px;
     }
 }
 
-@media (min-width: 75em) {
+@media (max-width: 480px) {
     .main-container {
-        grid-template:
-          "ban ban ban ban ban ban ban ban ban ban ban ban" minmax(8em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-          "tm1 tm1 tm1 tm1 tm2 tm2 tm2 tm2 tm3 tm3 tm3 tm3" minmax(32em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
-          "oct oct oct oct oct oct oct oct oct oct oct oct" minmax(2em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-          "ci1 ci1 ci1 ci2 ci2 ci2 ci3 ci3 ci3 ci4 ci4 ci4" minmax(8em, auto)
-          " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-          "ci5 ci5 ci5 ci6 ci6 ci6 ci7 ci7 ci7 ci8 ci8 ci8" minmax(8em, auto)
-     }
+        grid-template-columns: 1fr;
+        column-gap: 1em;
+    }
+
+    .banner-title {
+        font-size: 1.5em;
+    }
+
+    .banner-subtitle {
+        font-size: 1.25em;
+    }
+
+    .our-clients-title {
+        font-size: 1.25em;
+    }
 }
